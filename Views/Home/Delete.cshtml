@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model WebHW_4.Models.Film
+<h3>Film "@Model.name"</h3>
+
+<table width="80%">
+    <tr>
+        <td>Title</td>
+        <td>Realise Date</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayFor(m => m.name)</td>
+        <td>@Html.DisplayFor(m => m.realisedate)</td>
+    </tr>
+
+</table>
+<br />
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete" />
+}
+<button><a href="~/Home/Index" class="navbar-brand">Back</a></button>

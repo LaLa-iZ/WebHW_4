@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Change information about film";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model WebHW_4.Models.Film
+<h3>Film "@Model.name"</h3>
+<form method="post">
+    <fieldset>
+        @Html.HiddenFor(m => m.id)
+        <p>
+            @Html.LabelFor(m => m.name, "Film title")
+            <br />
+            @Html.EditorFor(m => m.name)
+            <br />
+            @Html.LabelFor(m => m.description, "Film description")
+            <br />
+            @Html.EditorFor(m => m.description)
+            <br />
+            @Html.LabelFor(m => m.realisedate, "Film realisedate")
+            <br />
+            @Html.EditorFor(m => m.realisedate)
+            <br />
+        </p>
+        <p>
+            <input type="submit" value="Send "/>
+        </p>
+        <p>
+            <button><a href="~/Home/Index" class="navbar-brand">Back</a></button>
+        </p>
+    </fieldset>
+</form>

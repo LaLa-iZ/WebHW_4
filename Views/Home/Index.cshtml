@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebHW_4.Models.Film>
+@{
+    ViewData["Title"] = "Films";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Films</title>
+    </head>
+<body>
+    <form asp-controller="Home" asp-action="Index">
+        <p>
+            <input type="text" name="SearchString">
+            <input type="submit" value="Search" />
+        </p>
+    </form>
+    <p>
+        <a asp-action="Create">Add</a>
+    </p>
+
+    <table>
+        @foreach (var film in Model)
+         {
+            <tr>
+                <td>@film.name</td>
+                <td>
+                    <button>
+                        <a href="~/Home/Info/@film.id">Info</a>
+                    </button>
+                </td>
+                <td>
+                    <button>
+                        <a href="~/Home/Edit/@film.id">Change</a>
+                    </button>
+                </td>
+                <td>
+                    <button>
+                        <a href="~/Home/Delete/@film.id">Delete</a>
+                    </button>
+                </td>
+            </tr>
+         }
+    </table>
+</body>
+</html>
